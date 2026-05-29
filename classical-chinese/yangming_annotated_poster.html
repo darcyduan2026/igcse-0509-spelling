@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>四民异业而同道｜批注海报</title>
+  <style>
+    :root {
+      --paper: #f8f3e8;
+      --ink: #222831;
+      --muted: #6d675f;
+      --rule: #d8cab7;
+      --blue: #1d5fbf;
+      --red: #c63d32;
+      --gold: #b8791a;
+      --green: #356b4a;
+      --note: #fffaf0;
+      --note-blue: #eef5ff;
+      --note-red: #fff0ed;
+      --shadow: rgba(72, 55, 33, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #e9e1d2;
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    }
+
+    .poster {
+      position: relative;
+      width: 1600px;
+      min-height: 2300px;
+      margin: 0 auto;
+      padding: 72px 60px 86px;
+      background:
+        linear-gradient(90deg, rgba(184, 121, 26, 0.12), transparent 18%, transparent 82%, rgba(53, 107, 74, 0.12)),
+        var(--paper);
+      overflow: hidden;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(120, 94, 57, 0.24);
+      pointer-events: none;
+    }
+
+    .header {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 42px;
+    }
+
+    .header .line {
+      height: 1px;
+      background: var(--rule);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 56px;
+      line-height: 1.05;
+      letter-spacing: 0;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 42px;
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 22px;
+      color: var(--muted);
+    }
+
+    .core-strip {
+      position: relative;
+      z-index: 4;
+      width: 760px;
+      margin: 0 auto 28px;
+      padding: 18px 20px 20px;
+      background: rgba(255, 250, 240, 0.9);
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      box-shadow: 0 10px 30px rgba(72, 55, 33, 0.08);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    .core-title {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 19px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .core-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .core-card {
+      min-height: 86px;
+      padding: 14px 14px 12px;
+      background: #fffdf7;
+      border: 1px solid rgba(120, 94, 57, 0.18);
+      border-top: 7px solid var(--gold);
+    }
+
+    .core-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .core-card span {
+      display: block;
+      color: #4b4640;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .legend {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .swatch {
+      display: inline-block;
+      width: 28px;
+      height: 6px;
+    }
+
+    .blue-swatch {
+      background: var(--blue);
+    }
+
+    .red-swatch {
+      background: var(--red);
+    }
+
+    .gold-swatch {
+      background: var(--gold);
+    }
+
+    .main-text {
+      position: relative;
+      z-index: 4;
+      width: 760px;
+      margin: 0 auto;
+      padding: 34px 44px 38px;
+      background: rgba(255, 252, 244, 0.86);
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      box-shadow: 0 18px 48px var(--shadow);
+    }
+
+    .main-text p {
+      margin: 0 0 20px;
+      font-size: 31px;
+      line-height: 1.72;
+      text-align: justify;
+    }
+
+    .main-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .py {
+      color: var(--blue);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 0.72em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .meaning {
+      color: var(--red);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 0.72em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .person {
+      color: var(--ink);
+      padding: 0 2px;
+      border-bottom: 3px solid rgba(184, 121, 26, 0.55);
+      background: rgba(184, 121, 26, 0.08);
+    }
+
+    .note {
+      position: absolute;
+      z-index: 3;
+      width: 330px;
+      padding: 18px 20px 18px 22px;
+      background: var(--note);
+      border: 1px solid rgba(120, 94, 57, 0.24);
+      box-shadow: 0 8px 26px rgba(72, 55, 33, 0.08);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    .note::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 7px;
+      background: var(--gold);
+    }
+
+    .note.left::before {
+      right: 0;
+    }
+
+    .note.right::before {
+      left: 0;
+    }
+
+    .note.blue {
+      background: var(--note-blue);
+    }
+
+    .note.blue::before {
+      background: var(--blue);
+    }
+
+    .note.red {
+      background: var(--note-red);
+    }
+
+    .note.red::before {
+      background: var(--red);
+    }
+
+    .note.green::before {
+      background: var(--green);
+    }
+
+    .note h2 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .note p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.42;
+      color: #3a3936;
+    }
+
+    .note small {
+      display: block;
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    .left {
+      left: 60px;
+    }
+
+    .right {
+      right: 60px;
+    }
+
+    .n1 { top: 300px; }
+    .n2 { top: 510px; }
+    .n3 { top: 720px; }
+    .n4 { top: 930px; }
+    .n5 { top: 1140px; }
+    .n6 { top: 1350px; }
+    .n7 { top: 1560px; }
+    .n8 { top: 1770px; }
+    .n9 { top: 1980px; }
+
+    .connector-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .connector {
+      fill: none;
+      stroke: rgba(86, 74, 55, 0.55);
+      stroke-width: 2.2;
+    }
+
+    .connector.blue {
+      stroke: rgba(29, 95, 191, 0.55);
+    }
+
+    .connector.red {
+      stroke: rgba(198, 61, 50, 0.55);
+    }
+
+    .connector.gold {
+      stroke: rgba(184, 121, 26, 0.55);
+    }
+
+    .footer {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      bottom: 44px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 16px;
+      z-index: 5;
+      border-top: 1px solid rgba(120, 94, 57, 0.18);
+      padding-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <main class="poster" id="poster">
+    <svg class="connector-layer" id="connectors" width="1600" height="2300" viewBox="0 0 1600 2300"></svg>
+
+    <header class="header">
+      <div class="line"></div>
+      <h1>《四民异业而同道》批注海报</h1>
+      <div class="line"></div>
+    </header>
+
+    <section class="subtitle">
+      <span class="legend"><span class="swatch blue-swatch"></span>蓝色：拼音</span>
+      <span class="legend"><span class="swatch red-swatch"></span>红色：字义/古今异义</span>
+      <span class="legend"><span class="swatch gold-swatch"></span>下划线：人物典故</span>
+    </section>
+
+    <section class="core-strip">
+      <p class="core-title">先抓这四组核心词，再读人物典故</p>
+      <div class="core-grid">
+        <div class="core-card">
+          <strong>四民</strong>
+          <span>士、农、工、商，是全文讨论的四种职业。</span>
+        </div>
+        <div class="core-card">
+          <strong>异业 / 同道</strong>
+          <span>职业分工不同；价值归向相同。</span>
+        </div>
+        <div class="core-card">
+          <strong>尽心</strong>
+          <span>把自己的职责做到充分，并能益人。</span>
+        </div>
+        <div class="core-card">
+          <strong>归要</strong>
+          <span>最后归结的要点：有益于生人。</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="note left red n1" data-target="shengren">
+      <h2>生人</h2>
+      <p>古义：百姓、民众。</p>
+      <small>不要理解成现代汉语里的“陌生人”。</small>
+    </aside>
+
+    <aside class="note left blue n2" data-target="shun">
+      <h2>舜、稷、契</h2>
+      <p>舜是上古圣王；稷掌农业，契掌教化。</p>
+      <small>这里用“舜叙九官”说明古代本来重视民生与教化。</small>
+    </aside>
+
+    <aside class="note left blue n3" data-target="chuiyi">
+      <h2>垂、益、夔龙</h2>
+      <p>垂掌百工，益掌山泽；夔、龙也是舜臣。</p>
+      <small>工艺、资源管理也在“大道”之内。</small>
+    </aside>
+
+    <aside class="note left n4" data-target="yiyin">
+      <h2>伊尹</h2>
+      <p>商初贤相，传说曾在莘野耕作。</p>
+      <small>说明贤才可以出于农耕。</small>
+    </aside>
+
+    <aside class="note left n5" data-target="fuyue">
+      <h2>傅说 <span class="py">(fù yuè)</span></h2>
+      <p>商代贤臣，原从事版筑劳作。</p>
+      <small>“说”作人名读 yuè，不读 shuō。</small>
+    </aside>
+
+    <aside class="note left red n6" data-target="wangdao">
+      <h2>王道熄</h2>
+      <p>王道政治衰微，礼乐仁义的理想秩序不再强有力。</p>
+      <small>不是单指火熄灭，而是政治理想“衰落”。</small>
+    </aside>
+
+    <aside class="note left red n7" data-target="jiao-wu">
+      <h2>交鹜于利</h2>
+      <p>人人竞相追逐利益。</p>
+      <small>“鹜”有奔逐、追逐之义。</small>
+    </aside>
+
+    <aside class="note left red n8" data-target="gonggu">
+      <h2>工贾 <span class="py">(gōng gǔ)</span></h2>
+      <p>工匠和商人。</p>
+      <small>“贾”这里读 gǔ，不读 jiǎ。</small>
+    </aside>
+
+    <aside class="note right n1" data-target="jiaoge">
+      <h2>胶鬲 <span class="py">(gé)</span></h2>
+      <p>传统说法中曾从鱼盐之业被举用。</p>
+      <small>说明商贾、市井中也可能有贤才。</small>
+    </aside>
+
+    <aside class="note right n2" data-target="lvwang">
+      <h2>吕望</h2>
+      <p>即姜太公，周初谋臣，传说曾钓于磻渭。</p>
+      <small>贤才未必一开始就在官场显位。</small>
+    </aside>
+
+    <aside class="note right n3" data-target="bailixi">
+      <h2>百里奚</h2>
+      <p>春秋秦国名臣，传统说法中曾处于市。</p>
+      <small>市井身份不等于人格低微。</small>
+    </aside>
+
+    <aside class="note right n4" data-target="kongzi">
+      <h2>孔子</h2>
+      <p>曾任乘田、委吏等小职。</p>
+      <small>圣人也有低微职事经历。</small>
+    </aside>
+
+    <aside class="note right n5" data-target="yifeng">
+      <h2>仪封、晨门</h2>
+      <p>《论语》中有识见的基层人物。</p>
+      <small>身份不高，也可以有高洁见识。</small>
+    </aside>
+
+    <aside class="note right n6" data-target="hekuizhuo">
+      <h2>荷蒉、斫轮</h2>
+      <p>荷蒉是背草筐的人；斫轮指有技艺的工匠。</p>
+      <small>劳动者和工匠也可有独到精神与智慧。</small>
+    </aside>
+
+    <aside class="note right red n7" data-target="xue-shu-guai">
+      <h2>学术乖</h2>
+      <p>学风、思想背离正道。</p>
+      <small>“乖”在古文里常有背离、违背之意。</small>
+    </aside>
+
+    <aside class="note right red n8" data-target="xinshi">
+      <h2>歆士而卑农</h2>
+      <p>羡慕士人而轻视农人。</p>
+      <small>这是阳明批判的价值颠倒。</small>
+    </aside>
+
+    <section class="main-text">
+      <p>阳明子曰：“古者四民<span class="meaning">[士、农、工、商]</span>异业而同道<span class="meaning">[职业不同，价值同归]</span>，其心尽焉<span class="meaning">[尽其本分]</span>，一也。</p>
+      <p>士之修治<span class="meaning">[治理、教化]</span>，农以具养<span class="meaning">[供养民生]</span>，工以利器<span class="meaning">[制造器物]</span>，商以通货<span class="meaning">[使货物流通]</span>，各就其资之所近、力之所及者而业焉，以求尽其心。</p>
+      <p>其归要<span class="meaning">[最终要点]</span>在于有益于<span id="shengren">生人</span><span class="meaning">[古义：百姓]</span>之道，则一而已。</p>
+      <p>士农以其尽心于修治具养者，而利器通货，犹其士与农也；工商以其尽心于利器通货者，而修治具养，犹其工与商也。</p>
+      <p>故曰：四民异业而同道。</p>
+      <p>盖昔<span class="person" id="shun">舜</span><span class="py">(shùn)</span>叙<span class="py">(xù)</span>九官，首<span class="person">稷</span><span class="py">(jì)</span>而次<span class="person">契</span><span class="py">(xiè)</span>，<span class="person" id="chuiyi">垂工益虞</span><span class="py">(yú)</span>，先于<span class="person">夔龙</span><span class="py">(kuí)</span>。</p>
+      <p>商周之代，<span class="person" id="yiyin">伊尹</span><span class="py">(yǐn)</span>耕于莘<span class="py">(shēn)</span>野，<span class="person" id="fuyue">傅说</span><span class="py">(fù yuè)</span>板筑于岩，<span class="person" id="jiaoge">胶鬲</span><span class="py">(gé)</span>举于鱼盐，<span class="person" id="lvwang">吕望</span><span class="py">(lǚ wàng)</span>钓于磻<span class="py">(pán)</span>渭，<span class="person" id="bailixi">百里奚</span><span class="py">(xī)</span>处于市，<span class="person" id="kongzi">孔子</span>为乘<span class="py">(shèng)</span>田委吏。</p>
+      <p>其诸<span class="person" id="yifeng">仪封、晨门</span>、<span class="person" id="hekuizhuo">荷蒉</span><span class="py">(hè kuì)</span>、<span class="person">斫</span><span class="py">(zhuó)</span>轮之徒，皆古之仁圣英贤、高洁不群之士，书传所称，可考而信也。</p>
+      <p>自<span id="wangdao">王道熄</span><span class="meaning">[王道衰微]</span>而<span id="xue-shu-guai">学术乖</span><span class="meaning">[背离正道]</span>，人失其心，<span id="jiao-wu">交鹜</span><span class="meaning">[奔逐]</span>于利，以相驱轶<span class="meaning">[相互冲撞、排挤]</span>，于是始有<span id="xinshi">歆士而卑农</span><span class="meaning">[羡慕士人、轻视农人]</span>，荣宦游<span class="meaning">[做官游历]</span>而耻<span id="gonggu">工贾</span><span class="py">(gǔ)</span><span class="meaning">[工匠与商人]</span>。”</p>
+    </section>
+
+    <footer class="footer">
+      <span>学生自学：先抓顶部核心词，再读黑色正文、蓝色读音和红色解释。</span>
+      <span>核心问题：职业不同，为什么仍可“同道”？</span>
+    </footer>
+  </main>
+
+  <script>
+    function connectNotes() {
+      const poster = document.getElementById("poster");
+      const svg = document.getElementById("connectors");
+      svg.innerHTML = "";
+      const posterBox = poster.getBoundingClientRect();
+      document.querySelectorAll(".note[data-target]").forEach((note) => {
+        const target = document.getElementById(note.dataset.target);
+        if (!target) return;
+
+        const noteBox = note.getBoundingClientRect();
+        const targetBox = target.getBoundingClientRect();
+        const isLeft = note.classList.contains("left");
+        const x1 = (isLeft ? noteBox.right : noteBox.left) - posterBox.left;
+        const y1 = noteBox.top + noteBox.height / 2 - posterBox.top;
+        const x2 = targetBox.left + targetBox.width / 2 - posterBox.left;
+        const y2 = targetBox.top + targetBox.height / 2 - posterBox.top;
+        const bend = isLeft ? Math.min(x1 + 90, x2 - 34) : Math.max(x1 - 90, x2 + 34);
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", `M ${x1} ${y1} C ${bend} ${y1}, ${bend} ${y2}, ${x2} ${y2}`);
+        path.setAttribute("class", `connector ${note.classList.contains("blue") ? "blue" : note.classList.contains("red") ? "red" : "gold"}`);
+        svg.appendChild(path);
+
+        const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        dot.setAttribute("cx", x2);
+        dot.setAttribute("cy", y2);
+        dot.setAttribute("r", 4);
+        dot.setAttribute("fill", note.classList.contains("red") ? "#c63d32" : note.classList.contains("blue") ? "#1d5fbf" : "#b8791a");
+        svg.appendChild(dot);
+      });
+    }
+
+    window.addEventListener("load", connectNotes);
+    window.addEventListener("resize", connectNotes);
+  </script>
+</body>
+</html>
