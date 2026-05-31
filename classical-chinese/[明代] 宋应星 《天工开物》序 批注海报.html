@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[明代] 宋应星 《天工开物》序 批注海报</title>
+  <style>
+    :root {
+      --paper: #f8f3e8;
+      --ink: #222831;
+      --muted: #6d675f;
+      --rule: #d8cab7;
+      --blue: #1d5fbf;
+      --red: #c63d32;
+      --gold: #b8791a;
+      --note: #fffaf0;
+      --note-blue: #eef5ff;
+      --shadow: rgba(72, 55, 33, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      background: #e9e1d2;
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    }
+
+    .poster {
+      position: relative;
+      width: 1600px;
+      min-height: 2500px;
+      margin: 0 auto;
+      padding: 68px 56px 88px;
+      background:
+        linear-gradient(90deg, rgba(184, 121, 26, 0.11), transparent 19%, transparent 81%, rgba(53, 107, 74, 0.10)),
+        var(--paper);
+      overflow: hidden;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(120, 94, 57, 0.24);
+      pointer-events: none;
+    }
+
+    .header {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .header .line {
+      height: 1px;
+      margin-bottom: 18px;
+      background: var(--rule);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 50px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 22px;
+      color: var(--muted);
+    }
+
+    .legend {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .swatch {
+      display: inline-block;
+      width: 28px;
+      height: 6px;
+    }
+
+    .blue-swatch { background: var(--blue); }
+    .red-swatch { background: var(--red); }
+    .gold-swatch { background: var(--gold); }
+
+    .core-strip {
+      position: relative;
+      z-index: 4;
+      width: 940px;
+      margin: 0 auto 28px;
+      padding: 18px 20px 20px;
+      background: rgba(255, 250, 240, 0.92);
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      box-shadow: 0 10px 30px rgba(72, 55, 33, 0.08);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    .core-title {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 19px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .core-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .core-card {
+      min-height: 96px;
+      padding: 14px 13px 12px;
+      background: #fffdf7;
+      border: 1px solid rgba(120, 94, 57, 0.18);
+      border-top: 7px solid var(--gold);
+    }
+
+    .core-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .core-card span {
+      display: block;
+      color: #4b4640;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .main-text {
+      position: relative;
+      z-index: 4;
+      width: 820px;
+      margin: 0 auto;
+      padding: 32px 42px 38px;
+      background: rgba(255, 252, 244, 0.88);
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      box-shadow: 0 18px 48px var(--shadow);
+    }
+
+    .main-text p {
+      margin: 0 0 18px;
+      font-size: 28px;
+      line-height: 1.62;
+      text-align: justify;
+    }
+
+    .main-text p:last-child { margin-bottom: 0; }
+
+    .py {
+      color: var(--blue);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 0.72em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .meaning {
+      color: var(--red);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 0.72em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .person {
+      color: var(--ink);
+      padding: 0 2px;
+      border-bottom: 3px solid rgba(184, 121, 26, 0.55);
+      background: rgba(184, 121, 26, 0.08);
+    }
+
+    .note {
+      position: absolute;
+      z-index: 3;
+      width: 315px;
+      padding: 17px 18px 17px 20px;
+      background: var(--note);
+      border: 1px solid rgba(120, 94, 57, 0.24);
+      box-shadow: 0 8px 26px rgba(72, 55, 33, 0.08);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    .note::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 7px;
+      background: var(--gold);
+    }
+
+    .note.left::before { right: 0; }
+    .note.right::before { left: 0; }
+
+    .note.blue { background: var(--note-blue); }
+    .note.blue::before { background: var(--blue); }
+
+    .note h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .note p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.42;
+      color: #3a3936;
+    }
+
+    .note small {
+      display: block;
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    .left { left: 56px; }
+    .right { right: 56px; }
+
+    .n1 { top: 440px; }
+    .n2 { top: 640px; }
+    .n3 { top: 840px; }
+    .n4 { top: 1040px; }
+    .n5 { top: 1320px; }
+    .n6 { top: 1700px; }
+    .n7 { top: 2050px; }
+
+    .connector-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .connector {
+      fill: none;
+      stroke: rgba(184, 121, 26, 0.55);
+      stroke-width: 2.2;
+    }
+
+    .connector.blue {
+      stroke: rgba(29, 95, 191, 0.55);
+    }
+
+    .footer {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      bottom: 44px;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(120, 94, 57, 0.18);
+      color: var(--muted);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <main class="poster" id="poster">
+    <svg class="connector-layer" id="connectors" width="1600" height="2500" viewBox="0 0 1600 2500"></svg>
+
+    <header class="header">
+      <div class="line"></div>
+      <h1>[明代] 宋应星 《天工开物》序 批注海报</h1>
+      <div class="line"></div>
+    </header>
+
+    <section class="subtitle">
+      <span class="legend"><span class="swatch blue-swatch"></span>蓝色：拼音</span>
+      <span class="legend"><span class="swatch red-swatch"></span>红色：字义/古今异义</span>
+      <span class="legend"><span class="swatch gold-swatch"></span>下划线：人物、地名</span>
+    </section>
+
+    <section class="core-strip">
+      <p class="core-title">这篇序不是自夸成书，而是说明：要亲见实察，做有益生人的书</p>
+      <div class="core-grid">
+        <div class="core-card">
+          <strong>天覆地载</strong>
+          <span>天地广大，万物纷繁，作者先写世界之大。</span>
+        </div>
+        <div class="core-card">
+          <strong>口授目成</strong>
+          <span>只靠传闻不够，必须亲眼所见、亲手辨识。</span>
+        </div>
+        <div class="core-card">
+          <strong>无益 / 有益</strong>
+          <span>区分空谈与实用，判断万物对人生的价值。</span>
+        </div>
+        <div class="core-card">
+          <strong>贵五谷 / 贱金玉</strong>
+          <span>重农重实，反对把富贵奢华看得过重。</span>
+        </div>
+        <div class="core-card">
+          <strong>功名无关</strong>
+          <span>这本书不是应试文章，而是实学之书。</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="note left n2" data-target="diannan">
+      <h2>滇南、辽阳、蓟北</h2>
+      <p>分别指云南、今辽宁辽阳一带、今北京北部一带。</p>
+      <small>作者借南北交通说明：当世事物皆可见闻。</small>
+    </aside>
+
+    <aside class="note right n2" data-target="zhengqiao">
+      <h2>郑侨、晋华</h2>
+      <p>文中用作善画犬马者的例子。</p>
+      <small>作者借他们反讽：只画虚怪、不察实物，不算高明。</small>
+    </aside>
+
+    <aside class="note left n5" data-target="luoxia">
+      <h2>洛下、陈思</h2>
+      <p>洛下指洛阳一带；陈思指陈思王曹植。</p>
+      <small>这里借典说明自己缺钱、缺馆舍，考证条件有限。</small>
+    </aside>
+
+    <aside class="note right n5" data-target="tu">
+      <h2>涂伯聚</h2>
+      <p>宋应星的友人，帮助此书刊刻传播。</p>
+      <small>序中“吾友”二字，写出书成背后有人相助。</small>
+    </aside>
+
+    <aside class="note left blue n7" data-target="fengxin">
+      <h2>奉新</h2>
+      <p>今江西奉新县，宋应星的籍贯。</p>
+      <small>结尾“奉新宋应星书”点明作者身份与出处。</small>
+    </aside>
+
+    <aside class="note right n7" data-target="shushe">
+      <h2>家食之问堂</h2>
+      <p>宋应星书写此序的书斋名。</p>
+      <small>“书于”后面的地点，说明写作场所。</small>
+    </aside>
+
+    <section class="main-text">
+      <p><span class="meaning">天覆地载（天地广阔，万物尽在其间）</span>，物数号万<span class="meaning">（数量极多）</span>，而事亦因之曲成而不遗<span class="meaning">（委曲成就而无所遗漏）</span>。岂人力也哉<span class="meaning">（岂只是人的力量呢）</span>？</p>
+
+      <p>事物而既万矣，必待口授目成<span class="meaning">（口耳相传，并亲眼看成）</span>而后识之，其与几何<span class="meaning">（那又能有多少呢）</span>？万事万物之中，其无益生人<span class="meaning">（对百姓生计没有益处）</span>与有益者，各载其半。</p>
+
+      <p>世有<span class="meaning">聪明博物（见闻广博）</span>者，稠人推焉<span class="meaning">（众人推重）</span>。乃枣梨之花未赏<span class="meaning">（没看过真实花木）</span>，而<span class="meaning">臆度（凭空猜测）</span>“楚萍”<span class="meaning">（传说中的大萍）</span>；釜鬵<span class="py">(fǔ xíng)</span><span class="meaning">（锅类器具）</span>之范鲜经<span class="meaning">（很少亲历铸模）</span>，而侈谈“莒鼎”<span class="meaning">（夸谈古代铜鼎）</span>；画工好图鬼魅<span class="meaning">（爱画虚幻怪物）</span>而恶犬马<span class="meaning">（不愿画常见实物）</span>，即<span class="person" id="zhengqiao">郑侨、晋华</span>，岂足为烈哉<span class="meaning">（哪里算得上高明呢）</span>？</p>
+
+      <p>幸生圣明极盛之世<span class="meaning">（有幸生在太平时代）</span>，<span class="person" id="diannan">滇南</span>车马，纵贯<span class="person">辽阳</span>；岭徼<span class="py">(jiào)</span><span class="meaning">（岭南边地）</span>宦商<span class="meaning">（官员商人）</span>，衡游<span class="person">蓟北</span><span class="py">(jì běi)</span>。为方万里中<span class="meaning">（在方圆万里内）</span>，何事何物不可见闻<span class="meaning">（什么都可亲见听闻）</span>？若为士而生东晋之初、南宋之季<span class="meaning">（国家分裂时期）</span>，其视燕<span class="py">(yān)</span>、秦、晋、豫方物<span class="meaning">（各地物产）</span>，已成夷产<span class="meaning">（成了异族物产）</span>，从互市<span class="meaning">（边境贸易）</span>而得裘帽<span class="meaning">（皮衣帽子）</span>，何殊肃慎<span class="py">(sù shèn)</span>之矢也<span class="meaning">（与远方贡物有何不同）</span>？且夫王孙帝子<span class="meaning">（贵族子弟）</span>生长深宫，御厨玉粒<span class="meaning">（宫中精米）</span>正香，而欲观耒耜<span class="py">(lěi sì)</span><span class="meaning">（古代农具）</span>，尚宫锦衣方剪<span class="meaning">（宫中正在裁衣）</span>，而想像机丝<span class="meaning">（织机丝线）</span>。当斯时也<span class="meaning">（在这种时候）</span>，披图一观<span class="meaning">（打开图一看）</span>，如获重宝矣！</p>
+
+      <p>年来著书一种<span class="meaning">（近年写成一书）</span>，名曰《天工开物卷》。伤哉贫也<span class="meaning">（贫穷令人遗憾）</span>，欲购奇考证<span class="meaning">（购奇物来查证）</span>，而乏<span class="person" id="luoxia">洛下</span>之资<span class="meaning">（缺少资金）</span>；欲招致同人<span class="meaning">（邀请同道）</span>，商略赝真<span class="py">(yàn zhēn)</span><span class="meaning">（商讨辨别真假）</span>，而缺陈思之馆<span class="meaning">（缺少宽裕馆舍）</span>。随其孤陋见闻<span class="meaning">（凭有限见闻）</span>，藏诸方寸<span class="meaning">（记在心中）</span>而写之，岂有当哉<span class="meaning">（哪能都妥当呢）</span>？吾友<span class="person" id="tu">涂伯聚</span>先生，诚意动天<span class="meaning">（诚心感人）</span>，心灵格物<span class="meaning">（善于探究事物）</span>。凡古今一言之嘉<span class="meaning">（一句好话）</span>，寸长可取<span class="meaning">（一点长处）</span>，必勤勤恳恳而契合焉<span class="meaning">（认真采纳配合）</span>。昨岁《画音归正》，由先生而授梓<span class="meaning">（交付刻板印刷）</span>；兹有后命<span class="meaning">（这次又承其命）</span>，复取此卷而继起为之<span class="meaning">（又接着刊刻此书）</span>，其亦夙缘<span class="py">(sù yuán)</span>之所召哉<span class="meaning">（大概是旧缘促成吧）</span>！卷分前后，乃“贵五谷而贱金玉”之义<span class="meaning">（重粮食轻珠玉）</span>。《观象》《乐律》二卷，其道太精<span class="meaning">（学理太精深）</span>，自揣<span class="py">(chuǎi)</span>非吾事<span class="meaning">（自量非己所长）</span>，故临梓删去<span class="meaning">（付印前删去）</span>。</p>
+
+      <p>丐大业文人<span class="meaning">（请以功名为大业的人）</span>，弃掷案头<span class="meaning">（把它丢在案头）</span>，此书于功名进取<span class="meaning">（科举仕进）</span>毫不相关也。时崇祯丁丑孟夏月<span class="meaning">（1637年四月）</span>，<span class="person" id="fengxin">奉新</span>宋应星书于<span class="person" id="shushe">家食之问堂</span>。</p>
+    </section>
+
+    <footer class="footer">
+      <span>学生自学：先看作者为什么强调“有益生人”，再看结尾怎样把书和功名分开。</span>
+      <span>核心问题：这篇序为什么把“实用、实察、重农”放在最前面？</span>
+    </footer>
+  </main>
+
+  <script>
+    function connectNotes() {
+      const poster = document.getElementById("poster");
+      const svg = document.getElementById("connectors");
+      svg.innerHTML = "";
+      const posterBox = poster.getBoundingClientRect();
+      document.querySelectorAll(".note[data-target]").forEach((note) => {
+        const target = document.getElementById(note.dataset.target);
+        if (!target) return;
+
+        const noteBox = note.getBoundingClientRect();
+        const targetBox = target.getBoundingClientRect();
+        const isLeft = note.classList.contains("left");
+        const x1 = (isLeft ? noteBox.right : noteBox.left) - posterBox.left;
+        const y1 = noteBox.top + noteBox.height / 2 - posterBox.top;
+        const x2 = targetBox.left + targetBox.width / 2 - posterBox.left;
+        const y2 = targetBox.top + targetBox.height / 2 - posterBox.top;
+        const bend = isLeft ? Math.min(x1 + 88, x2 - 32) : Math.max(x1 - 88, x2 + 32);
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", `M ${x1} ${y1} C ${bend} ${y1}, ${bend} ${y2}, ${x2} ${y2}`);
+        path.setAttribute("class", `connector ${note.classList.contains("blue") ? "blue" : "gold"}`);
+        svg.appendChild(path);
+
+        const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        dot.setAttribute("cx", x2);
+        dot.setAttribute("cy", y2);
+        dot.setAttribute("r", 4);
+        dot.setAttribute("fill", note.classList.contains("blue") ? "#1d5fbf" : "#b8791a");
+        svg.appendChild(dot);
+      });
+    }
+
+    window.addEventListener("load", connectNotes);
+    window.addEventListener("resize", connectNotes);
+  </script>
+</body>
+</html>

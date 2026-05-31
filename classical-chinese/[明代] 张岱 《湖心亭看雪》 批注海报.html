@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[明代] 张岱 《湖心亭看雪》 批注海报</title>
+  <style>
+    :root {
+      --paper: #f8f3e8;
+      --ink: #222831;
+      --muted: #6d675f;
+      --rule: #d8cab7;
+      --blue: #1d5fbf;
+      --red: #c63d32;
+      --gold: #b8791a;
+      --note: #fffaf0;
+      --note-blue: #eef5ff;
+      --shadow: rgba(72, 55, 33, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      background: #e9e1d2;
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    }
+
+    .poster {
+      position: relative;
+      width: 1600px;
+      min-height: 1450px;
+      margin: 0 auto;
+      padding: 68px 56px 88px;
+      background:
+        linear-gradient(90deg, rgba(184, 121, 26, 0.11), transparent 19%, transparent 81%, rgba(53, 107, 74, 0.10)),
+        var(--paper);
+      overflow: hidden;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(120, 94, 57, 0.24);
+      pointer-events: none;
+    }
+
+    .header {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .header .line {
+      height: 1px;
+      margin-bottom: 18px;
+      background: var(--rule);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 54px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 22px;
+      color: var(--muted);
+    }
+
+    .legend {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .swatch {
+      display: inline-block;
+      width: 28px;
+      height: 6px;
+    }
+
+    .blue-swatch { background: var(--blue); }
+    .red-swatch { background: var(--red); }
+    .gold-swatch { background: var(--gold); }
+
+    .core-strip {
+      position: relative;
+      z-index: 4;
+      width: 920px;
+      margin: 0 auto 28px;
+      padding: 18px 20px 20px;
+      background: rgba(255, 250, 240, 0.92);
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      box-shadow: 0 10px 30px rgba(72, 55, 33, 0.08);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    .core-title {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 19px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .core-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .core-card {
+      min-height: 92px;
+      padding: 14px 13px 12px;
+      background: #fffdf7;
+      border: 1px solid rgba(120, 94, 57, 0.18);
+      border-top: 7px solid var(--gold);
+    }
+
+    .core-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .core-card span {
+      display: block;
+      color: #4b4640;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .main-text {
+      position: relative;
+      z-index: 4;
+      width: 820px;
+      margin: 0 auto;
+      padding: 32px 42px 38px;
+      background: rgba(255, 252, 244, 0.88);
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      box-shadow: 0 18px 48px var(--shadow);
+    }
+
+    .main-text p {
+      margin: 0 0 18px;
+      font-size: 28px;
+      line-height: 1.64;
+      text-align: justify;
+    }
+
+    .main-text p:last-child { margin-bottom: 0; }
+
+    .py {
+      color: var(--blue);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 0.72em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .meaning {
+      color: var(--red);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 0.72em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .person {
+      color: var(--ink);
+      padding: 0 2px;
+      border-bottom: 3px solid rgba(184, 121, 26, 0.55);
+      background: rgba(184, 121, 26, 0.08);
+    }
+
+    .note {
+      position: absolute;
+      z-index: 3;
+      width: 315px;
+      padding: 17px 18px 17px 20px;
+      background: var(--note);
+      border: 1px solid rgba(120, 94, 57, 0.24);
+      box-shadow: 0 8px 26px rgba(72, 55, 33, 0.08);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    .note::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 7px;
+      background: var(--gold);
+    }
+
+    .note.left::before { right: 0; }
+    .note.right::before { left: 0; }
+
+    .note.blue { background: var(--note-blue); }
+    .note.blue::before { background: var(--blue); }
+
+    .note h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .note p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.42;
+      color: #3a3936;
+    }
+
+    .note small {
+      display: block;
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    .left { left: 56px; }
+    .right { right: 56px; }
+
+    .n1 { top: 440px; }
+    .n2 { top: 640px; }
+
+    .connector-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .connector {
+      fill: none;
+      stroke: rgba(184, 121, 26, 0.55);
+      stroke-width: 2.2;
+    }
+
+    .connector.blue {
+      stroke: rgba(29, 95, 191, 0.55);
+    }
+
+    .footer {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      bottom: 44px;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(120, 94, 57, 0.18);
+      color: var(--muted);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <main class="poster" id="poster">
+    <svg class="connector-layer" id="connectors" width="1600" height="1450" viewBox="0 0 1600 1450"></svg>
+
+    <header class="header">
+      <div class="line"></div>
+      <h1>[明代] 张岱 《湖心亭看雪》 批注海报</h1>
+      <div class="line"></div>
+    </header>
+
+    <section class="subtitle">
+      <span class="legend"><span class="swatch blue-swatch"></span>蓝色：拼音</span>
+      <span class="legend"><span class="swatch red-swatch"></span>红色：字义/古今异义</span>
+      <span class="legend"><span class="swatch gold-swatch"></span>下划线：人物、地名</span>
+    </section>
+
+    <section class="core-strip">
+      <p class="core-title">从“独”“白”“痴”读出雪夜里的空阔与雅趣</p>
+      <div class="core-grid">
+        <div class="core-card">
+          <strong>更定</strong>
+          <span>时间已深，夜色与湖面都更静了。</span>
+        </div>
+        <div class="core-card">
+          <strong>独往</strong>
+          <span>一个人去看雪，先写心境的孤高。</span>
+        </div>
+        <div class="core-card">
+          <strong>上下一白</strong>
+          <span>天地同色，雪景洁白而辽阔。</span>
+        </div>
+        <div class="core-card">
+          <strong>一痕 / 一点 / 一芥</strong>
+          <span>用极小的景物，衬出极大的空阔。</span>
+        </div>
+        <div class="core-card">
+          <strong>痴</strong>
+          <span>表面像傻，实际是不同俗流的雅趣。</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="note left blue n1" data-target="xihu">
+      <h2>西湖</h2>
+      <p>杭州名湖，是全文雪夜行舟的空间起点。</p>
+      <small>张岱先说“余住西湖”，再写大雪封湖。</small>
+    </aside>
+
+    <aside class="note right n1" data-target="huxin">
+      <h2>湖心亭</h2>
+      <p>西湖中的亭子，也是作者赏雪的目的地。</p>
+      <small>标题里的“看雪”，最终都落到这里。</small>
+    </aside>
+
+    <aside class="note left n2" data-target="jinling">
+      <h2>金陵</h2>
+      <p>今南京。文中两位客人都来自这里。</p>
+      <small>“客此”说明他们在西湖是暂住，不是本地人。</small>
+    </aside>
+
+    <aside class="note right n2" data-target="zhouzi">
+      <h2>舟子</h2>
+      <p>撑船的人，结尾借他的口收束全文。</p>
+      <small>他看似随口一说，却点出了“痴”的意味。</small>
+    </aside>
+
+    <section class="main-text">
+      <p><span class="meaning">崇祯五年（明崇祯五年，1632）</span>十二月，余住<span class="person" id="xihu">西湖</span>。大雪三日，湖中人鸟声俱绝<span class="meaning">（人声鸟鸣全都消失）</span>。</p>
+
+      <p>是日<span class="py">更定(gēng dìng)</span><span class="meaning">（初更之后，夜深人静）</span>矣，余<span class="py">拏(ná)</span>一小舟，拥毳衣<span class="py">(cuì yī)</span>炉火，独往<span class="person" id="huxin">湖心亭</span>看雪。霧凇沆砀<span class="py">(wù sōng hàng dàng)</span><span class="meaning">（白气弥漫，天地一片迷蒙）</span>，天与云、与山、与水，上下一白<span class="meaning">（上下都是洁白一色）</span>。湖上影子，惟长堤一痕，湖心亭一点，与余舟一芥<span class="py">(jiè)</span><span class="meaning">（像一粒小草般渺小）</span>，舟中人两三粒而已<span class="meaning">（极言其小）</span>。</p>
+
+      <p>到亭上，有两人铺氈<span class="py">(zhān)</span>对坐，一童子烧酒，炉正沸<span class="meaning">（正烧得滚热）</span>。见余大喜曰：“湖中焉得更<span class="py">(gèng)</span>有此人<span class="meaning">（哪里还能再有这样的人）</span>！”拉余同饮，余强饮<span class="py">(qiǎng yǐn)</span>三大白<span class="meaning">（三大杯酒）</span>而别。问其姓氏，是<span class="person" id="jinling">金陵</span>人，客此<span class="meaning">（客居在此）</span>。</p>
+
+      <p>及下船，<span class="person" id="zhouzi">舟子</span>喃喃<span class="py">(nán nán)</span><span class="meaning">（自言自语）</span>曰：“莫说相公<span class="py">(xiàng gōng)</span><span class="meaning">（旧时对读书人的敬称，这里指张岱）</span>痴，更<span class="py">(gèng)</span>有痴似相公者<span class="meaning">（还有比你更痴的人）</span>。”</p>
+    </section>
+
+    <footer class="footer">
+      <span>学生自学：先读时间与雪景，再读偶遇与结尾一句评语。</span>
+      <span>核心问题：为什么张岱偏要在大雪深夜独往湖心亭看雪？</span>
+    </footer>
+  </main>
+
+  <script>
+    function connectNotes() {
+      const poster = document.getElementById("poster");
+      const svg = document.getElementById("connectors");
+      svg.innerHTML = "";
+      const posterBox = poster.getBoundingClientRect();
+      document.querySelectorAll(".note[data-target]").forEach((note) => {
+        const target = document.getElementById(note.dataset.target);
+        if (!target) return;
+
+        const noteBox = note.getBoundingClientRect();
+        const targetBox = target.getBoundingClientRect();
+        const isLeft = note.classList.contains("left");
+        const x1 = (isLeft ? noteBox.right : noteBox.left) - posterBox.left;
+        const y1 = noteBox.top + noteBox.height / 2 - posterBox.top;
+        const x2 = targetBox.left + targetBox.width / 2 - posterBox.left;
+        const y2 = targetBox.top + targetBox.height / 2 - posterBox.top;
+        const bend = isLeft ? Math.min(x1 + 88, x2 - 32) : Math.max(x1 - 88, x2 + 32);
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", `M ${x1} ${y1} C ${bend} ${y1}, ${bend} ${y2}, ${x2} ${y2}`);
+        path.setAttribute("class", `connector ${note.classList.contains("blue") ? "blue" : "gold"}`);
+        svg.appendChild(path);
+
+        const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        dot.setAttribute("cx", x2);
+        dot.setAttribute("cy", y2);
+        dot.setAttribute("r", 4);
+        dot.setAttribute("fill", note.classList.contains("blue") ? "#1d5fbf" : "#b8791a");
+        svg.appendChild(dot);
+      });
+    }
+
+    window.addEventListener("load", connectNotes);
+    window.addEventListener("resize", connectNotes);
+  </script>
+</body>
+</html>

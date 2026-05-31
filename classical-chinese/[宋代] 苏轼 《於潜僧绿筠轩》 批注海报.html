@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[宋代] 苏轼 《於潜僧绿筠轩》 批注海报</title>
+  <style>
+    :root {
+      --paper: #f6f4e9;
+      --ink: #222831;
+      --muted: #6c665c;
+      --rule: #d6cab8;
+      --blue: #1d5fbf;
+      --red: #c63d32;
+      --gold: #b8791a;
+      --green: #356b4a;
+      --note: #fffaf0;
+      --note-blue: #eef5ff;
+      --note-red: #fff0ed;
+      --shadow: rgba(72, 55, 33, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      background: #e7e1d4;
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    }
+
+    .poster {
+      position: relative;
+      width: 1600px;
+      min-height: 1050px;
+      margin: 0 auto;
+      padding: 68px 56px 88px;
+      background:
+        linear-gradient(90deg, rgba(29, 95, 191, 0.08), transparent 18%, transparent 82%, rgba(53, 107, 74, 0.10)),
+        var(--paper);
+      overflow: hidden;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      pointer-events: none;
+    }
+
+    .header {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 20px;
+    }
+
+    .header .line {
+      height: 1px;
+      margin-bottom: 18px;
+      background: var(--rule);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 52px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 28px;
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 22px;
+      color: var(--muted);
+    }
+
+    .legend {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .swatch {
+      display: inline-block;
+      width: 28px;
+      height: 6px;
+    }
+
+    .blue-swatch { background: var(--blue); }
+    .red-swatch { background: var(--red); }
+    .gold-swatch { background: var(--gold); }
+
+    .core-strip {
+      position: relative;
+      z-index: 4;
+      width: 920px;
+      margin: 0 auto 26px;
+      padding: 18px 20px 20px;
+      background: rgba(255, 250, 240, 0.93);
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      box-shadow: 0 10px 30px rgba(72, 55, 33, 0.08);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    .core-title {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 19px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .core-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .core-card {
+      min-height: 98px;
+      padding: 14px 13px 12px;
+      background: #fffdf7;
+      border: 1px solid rgba(120, 94, 57, 0.18);
+      border-top: 7px solid var(--gold);
+    }
+
+    .core-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .core-card span {
+      display: block;
+      color: #4b4640;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .main-text {
+      position: relative;
+      z-index: 4;
+      width: 820px;
+      margin: 0 auto;
+      padding: 34px 42px 38px;
+      background: rgba(255, 252, 244, 0.88);
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      box-shadow: 0 18px 48px var(--shadow);
+    }
+
+    .main-text p {
+      margin: 0 0 18px;
+      font-size: 30px;
+      line-height: 1.62;
+      text-align: justify;
+    }
+
+    .main-text p:last-child { margin-bottom: 0; }
+
+    .py {
+      color: var(--blue);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 0.72em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .meaning {
+      color: var(--red);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 0.72em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .highlight {
+      color: var(--ink);
+      padding: 0 2px;
+      border-bottom: 3px solid rgba(53, 107, 74, 0.55);
+      background: rgba(53, 107, 74, 0.08);
+    }
+
+    .note {
+      position: absolute;
+      z-index: 3;
+      width: 320px;
+      padding: 17px 18px 17px 20px;
+      background: var(--note);
+      border: 1px solid rgba(120, 94, 57, 0.24);
+      box-shadow: 0 8px 26px rgba(72, 55, 33, 0.08);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    .note::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 7px;
+      background: var(--gold);
+    }
+
+    .note.left::before { right: 0; }
+    .note.right::before { left: 0; }
+
+    .note.blue { background: var(--note-blue); }
+    .note.blue::before { background: var(--blue); }
+
+    .note.red { background: var(--note-red); }
+    .note.red::before { background: var(--red); }
+
+    .note h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .note p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.42;
+      color: #3a3936;
+    }
+
+    .note small {
+      display: block;
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    .left { left: 56px; }
+    .right { right: 56px; }
+
+    .n1 { top: 320px; }
+    .n2 { top: 530px; }
+    .n3 { top: 740px; }
+    .n4 { top: 950px; }
+    .n5 { top: 1160px; }
+    .n6 { top: 1370px; }
+    .n7 { top: 1580px; }
+
+    .connector-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .connector {
+      fill: none;
+      stroke: rgba(86, 74, 55, 0.55);
+      stroke-width: 2.2;
+    }
+
+    .connector.blue { stroke: rgba(29, 95, 191, 0.55); }
+    .connector.red { stroke: rgba(198, 61, 50, 0.55); }
+    .connector.gold { stroke: rgba(184, 121, 26, 0.55); }
+
+    .footer {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      bottom: 42px;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(120, 94, 57, 0.18);
+      color: var(--muted);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <main class="poster" id="poster">
+    <svg class="connector-layer" id="connectors" width="1600" height="1050" viewBox="0 0 1600 1050"></svg>
+
+    <header class="header">
+      <div class="line"></div>
+      <h1>[宋代] 苏轼 《<span id="yuqian">於潜</span>僧<span id="lvyun">绿筠</span>轩》 批注海报</h1>
+      <div class="line"></div>
+    </header>
+
+    <section class="subtitle">
+      <span class="legend"><span class="swatch blue-swatch"></span>蓝色：拼音</span>
+      <span class="legend"><span class="swatch red-swatch"></span>红色：字义/古今异义</span>
+      <span class="legend"><span class="swatch gold-swatch"></span>下划线：人物、地名、制度</span>
+    </section>
+
+    <section class="core-strip">
+      <p class="core-title">先抓住“竹”与“俗”的对照，再看苏轼的机锋</p>
+      <div class="core-grid">
+        <div class="core-card">
+          <strong>食无肉 / 居无竹</strong>
+          <span>这是全诗的价值选择：宁缺肉，不可无竹。</span>
+        </div>
+        <div class="core-card">
+          <strong>俗</strong>
+          <span>诗中反复对立的词，代表庸俗、粗鄙。</span>
+        </div>
+        <div class="core-card">
+          <strong>此君</strong>
+          <span>古人对竹的敬称，把竹写成像君子一样的人。</span>
+        </div>
+        <div class="core-card">
+          <strong>俗士不可医</strong>
+          <span>夸张而锋利的说法，讽刺太俗的人难以矫正。</span>
+        </div>
+        <div class="core-card">
+          <strong>扬州鹤</strong>
+          <span>结尾典故，带着戏谑，收住全诗的机锋。</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="note left n1" data-target="yuqian">
+      <h2>於潜 <span class="py">(yú qián)</span></h2>
+      <p>地名，点出这首诗所指向的具体地方。</p>
+      <small>题目先交代地点，再引出竹轩中的见闻。</small>
+    </aside>
+
+    <aside class="note left blue n2" data-target="lvyun">
+      <h2>绿筠 <span class="py">(lǜ yún)</span>轩</h2>
+      <p>竹轩名。筠指竹皮，也常借指竹子。</p>
+      <small>题目本身就在告诉读者：这里是竹的空间。</small>
+    </aside>
+
+    <section class="main-text">
+      <p>宁可食无肉<span class="meaning">（吃饭可以没有肉）</span>，不可<span id="wurou">居无竹</span><span class="meaning">（居住不能没有竹）</span>。</p>
+      <p>无肉令人瘦，无竹令人俗<span class="meaning">（俗气）</span>。</p>
+      <p>人瘦尚可肥，<span id="sushi">俗士不可医</span><span class="meaning">（庸俗难矫正）</span>。</p>
+      <p>旁人笑此言，似高还似痴<span class="meaning">（像高雅，又像痴傻）</span>。</p>
+      <p>若对<span id="cijun">此君</span><span class="py">(cǐ jūn)</span><span class="meaning">（竹的敬称）</span>仍<span id="dajiao">大嚼</span><span class="py">(jiáo)</span><span class="meaning">（大口咀嚼）</span>，世间哪有<span id="yangzhouhe">扬州鹤</span><span class="py">(yáng zhōu hè)</span><span class="meaning">（高雅超脱的典故）</span>。</p>
+    </section>
+
+    <footer class="footer">
+      <span>学生自学：先看顶部核心词，再读黑色原文、蓝色读音和红色短注。</span>
+      <span>核心问题：苏轼为什么说“不可居无竹”？结尾为什么忽然提到“扬州鹤”？</span>
+    </footer>
+  </main>
+
+  <script>
+    function connectNotes() {
+      const poster = document.getElementById("poster");
+      const svg = document.getElementById("connectors");
+      svg.innerHTML = "";
+      const posterBox = poster.getBoundingClientRect();
+      document.querySelectorAll(".note[data-target]").forEach((note) => {
+        const target = document.getElementById(note.dataset.target);
+        if (!target) return;
+
+        const noteBox = note.getBoundingClientRect();
+        const targetBox = target.getBoundingClientRect();
+        const isLeft = note.classList.contains("left");
+        const x1 = (isLeft ? noteBox.right : noteBox.left) - posterBox.left;
+        const y1 = noteBox.top + noteBox.height / 2 - posterBox.top;
+        const x2 = targetBox.left + targetBox.width / 2 - posterBox.left;
+        const y2 = targetBox.top + targetBox.height / 2 - posterBox.top;
+        const bend = isLeft ? Math.min(x1 + 90, x2 - 34) : Math.max(x1 - 90, x2 + 34);
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", `M ${x1} ${y1} C ${bend} ${y1}, ${bend} ${y2}, ${x2} ${y2}`);
+        path.setAttribute("class", `connector ${note.classList.contains("blue") ? "blue" : note.classList.contains("red") ? "red" : "gold"}`);
+        svg.appendChild(path);
+
+        const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        dot.setAttribute("cx", x2);
+        dot.setAttribute("cy", y2);
+        dot.setAttribute("r", 4);
+        dot.setAttribute("fill", note.classList.contains("red") ? "#c63d32" : note.classList.contains("blue") ? "#1d5fbf" : "#b8791a");
+        svg.appendChild(dot);
+      });
+    }
+
+    window.addEventListener("load", connectNotes);
+    window.addEventListener("resize", connectNotes);
+  </script>
+</body>
+</html>

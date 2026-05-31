@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>四民异业而同道｜批注海报</title>
+  <title>[明代] 宋濂 《记李歌》 批注海报</title>
   <style>
     :root {
       --paper: #f8f3e8;
@@ -24,6 +24,7 @@
       box-sizing: border-box;
     }
 
+    html,
     body {
       margin: 0;
       background: #e9e1d2;
@@ -34,11 +35,11 @@
     .poster {
       position: relative;
       width: 1600px;
-      min-height: 2100px;
+      min-height: 1900px;
       margin: 0 auto;
-      padding: 72px 60px 86px;
+      padding: 68px 56px 92px;
       background:
-        linear-gradient(90deg, rgba(184, 121, 26, 0.12), transparent 18%, transparent 82%, rgba(53, 107, 74, 0.12)),
+        linear-gradient(90deg, rgba(184, 121, 26, 0.12), transparent 19%, transparent 81%, rgba(53, 107, 74, 0.12)),
         var(--paper);
       overflow: hidden;
     }
@@ -58,13 +59,13 @@
       grid-template-columns: 1fr auto 1fr;
       align-items: end;
       gap: 28px;
-      margin-bottom: 42px;
+      margin-bottom: 28px;
     }
 
     .header .line {
       height: 1px;
-      background: var(--rule);
       margin-bottom: 18px;
+      background: var(--rule);
     }
 
     h1 {
@@ -82,59 +83,10 @@
       display: flex;
       justify-content: center;
       gap: 24px;
-      margin-bottom: 42px;
+      margin-bottom: 32px;
       font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
       font-size: 22px;
       color: var(--muted);
-    }
-
-    .core-strip {
-      position: relative;
-      z-index: 4;
-      width: 760px;
-      margin: 0 auto 28px;
-      padding: 18px 20px 20px;
-      background: rgba(255, 250, 240, 0.9);
-      border: 1px solid rgba(120, 94, 57, 0.22);
-      box-shadow: 0 10px 30px rgba(72, 55, 33, 0.08);
-      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
-    }
-
-    .core-title {
-      margin: 0 0 12px;
-      color: var(--gold);
-      font-size: 19px;
-      font-weight: 800;
-      text-align: center;
-    }
-
-    .core-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .core-card {
-      min-height: 86px;
-      padding: 14px 14px 12px;
-      background: #fffdf7;
-      border: 1px solid rgba(120, 94, 57, 0.18);
-      border-top: 7px solid var(--gold);
-    }
-
-    .core-card strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--ink);
-      font-size: 20px;
-      line-height: 1.1;
-    }
-
-    .core-card span {
-      display: block;
-      color: #4b4640;
-      font-size: 15px;
-      line-height: 1.35;
     }
 
     .legend {
@@ -161,21 +113,70 @@
       background: var(--gold);
     }
 
+    .core-strip {
+      position: relative;
+      z-index: 4;
+      width: 900px;
+      margin: 0 auto 28px;
+      padding: 18px 20px 20px;
+      background: rgba(255, 250, 240, 0.92);
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      box-shadow: 0 10px 30px rgba(72, 55, 33, 0.08);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    .core-title {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 19px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .core-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .core-card {
+      min-height: 92px;
+      padding: 14px 13px 12px;
+      background: #fffdf7;
+      border: 1px solid rgba(120, 94, 57, 0.18);
+      border-top: 7px solid var(--gold);
+    }
+
+    .core-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .core-card span {
+      display: block;
+      color: #4b4640;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
     .main-text {
       position: relative;
       z-index: 4;
-      width: 760px;
+      width: 820px;
       margin: 0 auto;
-      padding: 34px 44px 38px;
-      background: rgba(255, 252, 244, 0.86);
+      padding: 32px 42px 38px;
+      background: rgba(255, 252, 244, 0.88);
       border: 1px solid rgba(120, 94, 57, 0.22);
       box-shadow: 0 18px 48px var(--shadow);
     }
 
     .main-text p {
-      margin: 0 0 20px;
-      font-size: 31px;
-      line-height: 1.72;
+      margin: 0 0 18px;
+      font-size: 28px;
+      line-height: 1.62;
       text-align: justify;
     }
 
@@ -209,8 +210,8 @@
     .note {
       position: absolute;
       z-index: 3;
-      width: 330px;
-      padding: 18px 20px 18px 22px;
+      width: 315px;
+      padding: 17px 18px 17px 20px;
       background: var(--note);
       border: 1px solid rgba(120, 94, 57, 0.24);
       box-shadow: 0 8px 26px rgba(72, 55, 33, 0.08);
@@ -256,14 +257,14 @@
 
     .note h2 {
       margin: 0 0 8px;
-      font-size: 24px;
+      font-size: 23px;
       line-height: 1.2;
       font-weight: 800;
     }
 
     .note p {
       margin: 0;
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.42;
       color: #3a3936;
     }
@@ -277,22 +278,23 @@
     }
 
     .left {
-      left: 60px;
+      left: 56px;
     }
 
     .right {
-      right: 60px;
+      right: 56px;
     }
 
-    .n1 { top: 460px; }
-    .n2 { top: 650px; }
-    .n3 { top: 840px; }
-    .n4 { top: 1030px; }
-    .n5 { top: 1220px; }
-    .n6 { top: 1410px; }
-    .n7 { top: 1600px; }
-    .n8 { top: 1790px; }
+    .n1 { top: 440px; }
+    .n2 { top: 630px; }
+    .n3 { top: 820px; }
+    .n4 { top: 960px; }
+    .n5 { top: 1164px; }
+    .n6 { top: 1368px; }
+    .n7 { top: 1572px; }
+    .n8 { top: 1776px; }
     .n9 { top: 1980px; }
+    .n10 { top: 2184px; }
 
     .connector-layer {
       position: absolute;
@@ -324,130 +326,105 @@
       left: 80px;
       right: 80px;
       bottom: 44px;
+      z-index: 5;
       display: flex;
       justify-content: space-between;
+      gap: 32px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(120, 94, 57, 0.18);
       color: var(--muted);
       font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
       font-size: 16px;
-      z-index: 5;
-      border-top: 1px solid rgba(120, 94, 57, 0.18);
-      padding-top: 16px;
     }
   </style>
 </head>
 <body>
   <main class="poster" id="poster">
-    <svg class="connector-layer" id="connectors" width="1600" height="2100" viewBox="0 0 1600 2100"></svg>
+    <svg class="connector-layer" id="connectors" width="1600" height="1900" viewBox="0 0 1600 1900"></svg>
 
     <header class="header">
       <div class="line"></div>
-      <h1>《四民异业而同道》批注海报</h1>
+      <h1>[明代] 宋濂 《记李歌》 批注海报</h1>
       <div class="line"></div>
     </header>
 
     <section class="subtitle">
       <span class="legend"><span class="swatch blue-swatch"></span>蓝色：拼音</span>
       <span class="legend"><span class="swatch red-swatch"></span>红色：字义/古今异义</span>
-      <span class="legend"><span class="swatch gold-swatch"></span>下划线：人物典故</span>
+      <span class="legend"><span class="swatch gold-swatch"></span>下划线：人物、地名、制度</span>
     </section>
 
     <section class="core-strip">
-      <p class="core-title">先抓这四组核心词，再读人物典故</p>
+      <p class="core-title">先抓这五个核心词，再看李歌怎样一次次守住自己</p>
       <div class="core-grid">
         <div class="core-card">
-          <strong>四民</strong>
-          <span>士、农、工、商，是全文讨论的四种职业。</span>
+          <strong>倡</strong>
+          <span>古代歌舞伎一类身份，文中是李歌所拒绝的命运。</span>
         </div>
         <div class="core-card">
-          <strong>异业 / 同道</strong>
-          <span>职业分工不同；价值归向相同。</span>
+          <strong>自守</strong>
+          <span>从“不脂泽、不荤肉”到拒绝狎侮，都在守人格边界。</span>
         </div>
         <div class="core-card">
-          <strong>尽心</strong>
-          <span>把自己的职责做到充分，并能益人。</span>
+          <strong>风化</strong>
+          <span>社会教化、礼义风俗；县令本应为表率。</span>
         </div>
         <div class="core-card">
-          <strong>归要</strong>
-          <span>最后归结的要点：有益于生人。</span>
+          <strong>处子</strong>
+          <span>指未嫁女子，也说明她坚持清白自守。</span>
+        </div>
+        <div class="core-card">
+          <strong>可慨</strong>
+          <span>作者感叹：出身被轻视者也能有坚贞节义。</span>
         </div>
       </div>
     </section>
 
-    <aside class="note left blue n1" data-target="shun">
-      <h2>舜、稷、契</h2>
-      <p>舜是上古圣王；稷掌农业，契掌教化。</p>
-      <small>这里用“舜叙九官”说明古代本来重视民生与教化。</small>
+    <aside class="note left n1" data-target="lige">
+      <h2>李歌</h2>
+      <p>文章主人公，虽被迫学歌舞，却主动约束生活、拒绝被侮辱。</p>
+      <small>本文重心不是写歌技，而是写其人格自守。</small>
     </aside>
 
-    <aside class="note left blue n2" data-target="chuiyi">
-      <h2>垂、益、夔龙</h2>
-      <p>垂掌百工，益掌山泽；夔、龙也是舜臣。</p>
-      <small>工艺、资源管理也在“大道”之内。</small>
+    <aside class="note left blue n2" data-target="bachou">
+      <h2>霸州</h2>
+      <p>地名，在今河北一带。</p>
+      <small>人物开篇先记籍贯，是传记类文章常见写法。</small>
     </aside>
 
-    <aside class="note left n3" data-target="yiyin">
-      <h2>伊尹</h2>
-      <p>商初贤相，传说曾在莘野耕作。</p>
-      <small>说明贤才可以出于农耕。</small>
+    <aside class="note right n1" data-target="yizhimei">
+      <h2>一枝梅</h2>
+      <p>李歌之母，也是倡。</p>
+      <small>她以衣食相迫，形成李歌必须面对的第一重困境。</small>
     </aside>
 
-    <aside class="note left n4" data-target="fuyue">
-      <h2>傅说 <span class="py">(fù yuè)</span></h2>
-      <p>商代贤臣，原从事版筑劳作。</p>
-      <small>“说”作人名读 yuè，不读 shuō。</small>
+    <aside class="note left n3" data-target="yijin">
+      <h2>益津县令</h2>
+      <p>地方官，却想用银钱逼迫李歌。</p>
+      <small>人物身份和行为形成强烈反差。</small>
     </aside>
 
-    <aside class="note right n1" data-target="jiaoge">
-      <h2>胶鬲 <span class="py">(gé)</span></h2>
-      <p>传统说法中曾从鱼盐之业被举用。</p>
-      <small>说明商贾、市井中也可能有贤才。</small>
-    </aside>
-
-    <aside class="note right n2" data-target="lvwang">
-      <h2>吕望</h2>
-      <p>即姜太公，周初谋臣，传说曾钓于磻渭。</p>
-      <small>贤才未必一开始就在官场显位。</small>
-    </aside>
-
-    <aside class="note right n3" data-target="bailixi">
-      <h2>百里奚</h2>
-      <p>春秋秦国名臣，传统说法中曾处于市。</p>
-      <small>市井身份不等于人格低微。</small>
-    </aside>
-
-    <aside class="note right n4" data-target="kongzi">
-      <h2>孔子</h2>
-      <p>曾任乘田、委吏等小职。</p>
-      <small>圣人也有低微职事经历。</small>
-    </aside>
-
-    <aside class="note right n5" data-target="yifeng">
-      <h2>仪封、晨门</h2>
-      <p>《论语》中有识见的基层人物。</p>
-      <small>身份不高，也可以有高洁见识。</small>
-    </aside>
-
-    <aside class="note right n6" data-target="hekuizhuo">
-      <h2>荷蒉、斫轮</h2>
-      <p>荷蒉是背草筐的人；斫轮指有技艺的工匠。</p>
-      <small>劳动者和工匠也可有独到精神与智慧。</small>
+    <aside class="note right n2" data-target="jianzhou">
+      <h2>监州</h2>
+      <p>地方官员，听闻李歌贤良，替儿子聘她为妇。</p>
+      <small>“闻其贤”说明社会评价已从色艺转向品德。</small>
     </aside>
 
     <section class="main-text">
-      <p>阳明子曰：“古者四民<span class="meaning">（士、农、工、商）</span>异业而同道<span class="meaning">（职业不同，价值同归）</span>，其心尽焉<span class="meaning">（尽其本分）</span>，一也。</p>
-      <p>士之修治<span class="meaning">（治理、教化）</span>，农以具养<span class="meaning">（供养民生）</span>，工以利器<span class="meaning">（制造器物）</span>，商以通货<span class="meaning">（使货物流通）</span>，各就其资之所近、力之所及者而业焉，以求尽其心。</p>
-      <p>其归要<span class="meaning">（最终要点）</span>在于有益于<span id="shengren">生人</span><span class="meaning">（古义：百姓）</span>之道，则一而已。</p>
-      <p>士农以其尽心于修治具养者，而利器通货，犹其士与农也；工商以其尽心于利器通货者，而修治具养，犹其工与商也。</p>
-      <p>故曰：四民异业而同道。</p>
-      <p>盖昔<span class="person" id="shun">舜</span><span class="py">(shùn)</span>叙<span class="py">(xù)</span>九官，首<span class="person">稷</span><span class="py">(jì)</span>而次<span class="person">契</span><span class="py">(xiè)</span>，<span class="person" id="chuiyi">垂工益虞</span><span class="py">(yú)</span>，先于<span class="person">夔龙</span><span class="py">(kuí)</span>。</p>
-      <p>商周之代，<span class="person" id="yiyin">伊尹</span><span class="py">(yǐn)</span>耕于莘<span class="py">(shēn)</span>野，<span class="person" id="fuyue">傅说</span><span class="py">(fù yuè)</span>板筑于岩，<span class="person" id="jiaoge">胶鬲</span><span class="py">(gé)</span>举于鱼盐，<span class="person" id="lvwang">吕望</span><span class="py">(lǚ wàng)</span>钓于磻<span class="py">(pán)</span>渭，<span class="person" id="bailixi">百里奚</span><span class="py">(xī)</span>处于市，<span class="person" id="kongzi">孔子</span>为乘<span class="py">(shèng)</span>田委吏。</p>
-      <p>其诸<span class="person" id="yifeng">仪封、晨门</span>、<span class="person" id="hekuizhuo">荷蒉</span><span class="py">(hè kuì)</span>、<span class="person">斫</span><span class="py">(zhuó)</span>轮之徒，皆古之仁圣英贤、高洁不群之士，书传所称，可考而信也。</p>
-      <p>自<span id="wangdao">王道熄</span><span class="meaning">（王道衰微）</span>而<span id="xue-shu-guai">学术乖</span><span class="meaning">（背离正道）</span>，人失其心，<span id="jiao-wu">交鹜</span><span class="meaning">（奔逐）</span>于利，以相驱轶<span class="meaning">（相互冲撞、排挤）</span>，于是始有<span id="xinshi">歆士而卑农</span><span class="meaning">（羡慕士人、轻视农人）</span>，荣宦游<span class="meaning">（做官游历）</span>而耻<span id="gonggu">工贾</span><span class="py">(gǔ)</span><span class="meaning">（工匠与商人）</span>。”</p>
+      <p><span class="person" id="lige">李歌</span>者，<span class="person" id="bachou">霸州</span>人。其母<span class="person" id="yizhimei">一枝梅</span>，<span id="chang">倡</span><span class="py">(chāng)</span><span class="meaning">（歌舞侍宴者）</span>也。年十四，母教之歌舞。李<span id="aoran">艴然</span><span class="py">(fú)</span><span class="meaning">（生气变色）</span>曰：“人皆有配偶，我可独为倡耶<span class="py">(yé)</span>？”母告以衣食所仰<span class="meaning">（赖以生活）</span>，不得已。与母约曰：“媪<span class="py">(ǎo)</span><span class="meaning">（老妇，这里称母）</span>能宽我，不脂泽<span class="meaning">（涂脂抹粉）</span>，不荤<span class="py">(hūn)</span>肉，则可尔；否则有死而已！”母惧，<span id="yangcong">阳从之</span><span class="meaning">（假装答应）</span>。</p>
+
+      <p>自是<span id="gaoyi">缟</span><span class="py">(gǎo)</span><span class="meaning">（白色）</span>衣素裳，唯拂掠翠鬟<span class="py">(huán)</span>，然姿容如玉雪，望之宛若仙人，愈致其妍<span class="meaning">（更显美好）</span>。人有招之者，李必询筵<span class="py">(yán)</span>中无恶少年乃行。未行，复遣人<span id="chanzhi">觇之</span><span class="py">(chān)</span><span class="meaning">（察看）</span>。人亦熟李行<span class="meaning">（熟知其品行）</span>，不敢以亵<span class="py">(xiè)</span>语加焉。李至，歌道家<span id="youtan">游仙辞</span><span class="meaning">（神仙题材歌词）</span>数阕<span class="py">(què)</span><span class="meaning">（几首）</span>，俨<span class="py">(yǎn)</span>容默坐。或有狎<span class="py">(xiá)</span>之者，辄<span class="py">(zhé)</span>拂袖径出，弗<span class="py">(fú)</span>少<span class="py">(shǎo)</span><span class="meaning">（稍微）</span>留；他日或再招，必拒不往。</p>
+
+      <p><span class="person" id="yijin">益津县令</span>年颇少<span class="py">(shào)</span><span class="meaning">（年轻）</span>，以<span id="baiyin">白金遗</span><span class="py">(wèi)</span>其母<span class="meaning">（白金：银子；遗：赠送）</span>，欲私之<span class="meaning">（想占有她）</span>。李持刀入户，以巨木撑柱，骂曰：“吾闻县令为<span id="fuhuashou">风化首</span><span class="meaning">（教化表率）</span>，汝纵不能而忍坏之耶？今冠裳<span class="py">(cháng)</span>其形而<span id="gouzhi">狗彘</span><span class="py">(zhì)</span>其行<span class="meaning">（行为卑劣）</span>，乃真贼尔！岂官人耶？汝即来，汝即来吾先杀汝而后自杀尔！”令惊走。</p>
+
+      <p>时<span class="person" id="jianzhou">监州</span>闻其贤，有子方读书，举<span class="person" id="xiucai">秀才</span>，聘为之妇，李尚<span id="chuzhi">处子</span><span class="meaning">（未嫁女子）</span>也。居数年，天下大乱，夫妇逃难，俱为贼所执<span class="meaning">（被贼抓住）</span>。贼悦李有殊色<span class="meaning">（特别美貌）</span>，欲杀其夫而<span id="qizhi">妻</span><span class="py">(qì)</span>之<span class="meaning">（娶她为妻）</span>。李抱其夫诟<span class="py">(gòu)</span>曰：“汝欲杀吾夫即先杀我，我宁死决不从汝作贼也！”贼怒，并杀之。</p>
+
+      <p><span id="you">吁</span><span class="py">(xū)</span><span class="meaning">（叹词）</span>！倡犹能有是哉<span class="meaning">（尚且能如此）</span>！可慨也。</p>
     </section>
 
     <footer class="footer">
-      <span>学生自学：先抓顶部核心词，再读黑色正文、蓝色读音和红色解释。</span>
-      <span>核心问题：职业不同，为什么仍可“同道”？</span>
+      <span>学生自学：先看顶部核心词，再读黑色原文、蓝色读音和红色短注。</span>
+      <span>核心问题：李歌每一次拒绝，分别守住了什么？作者借李歌之死，反衬身份贵贱不等于人格高下。</span>
     </footer>
   </main>
 
@@ -468,7 +445,7 @@
         const y1 = noteBox.top + noteBox.height / 2 - posterBox.top;
         const x2 = targetBox.left + targetBox.width / 2 - posterBox.left;
         const y2 = targetBox.top + targetBox.height / 2 - posterBox.top;
-        const bend = isLeft ? Math.min(x1 + 90, x2 - 34) : Math.max(x1 - 90, x2 + 34);
+        const bend = isLeft ? Math.min(x1 + 88, x2 - 32) : Math.max(x1 - 88, x2 + 32);
         const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
         path.setAttribute("d", `M ${x1} ${y1} C ${bend} ${y1}, ${bend} ${y2}, ${x2} ${y2}`);
         path.setAttribute("class", `connector ${note.classList.contains("blue") ? "blue" : note.classList.contains("red") ? "red" : "gold"}`);

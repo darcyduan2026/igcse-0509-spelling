@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[明代] 刘基 《蜀贾》 批注海报</title>
+  <style>
+    :root {
+      --paper: #f8f3e8;
+      --ink: #222831;
+      --muted: #6d675f;
+      --rule: #d8cab7;
+      --blue: #1d5fbf;
+      --red: #c63d32;
+      --gold: #b8791a;
+      --note: #fffaf0;
+      --note-blue: #eef5ff;
+      --shadow: rgba(72, 55, 33, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      background: #e9e1d2;
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    }
+
+    .poster {
+      position: relative;
+      width: 1600px;
+      min-height: 1660px;
+      margin: 0 auto;
+      padding: 68px 56px 88px;
+      background:
+        linear-gradient(90deg, rgba(184, 121, 26, 0.11), transparent 19%, transparent 81%, rgba(53, 107, 74, 0.10)),
+        var(--paper);
+      overflow: hidden;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(120, 94, 57, 0.24);
+      pointer-events: none;
+    }
+
+    .header {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .header .line {
+      height: 1px;
+      margin-bottom: 18px;
+      background: var(--rule);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 54px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 22px;
+      color: var(--muted);
+    }
+
+    .legend {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .swatch {
+      display: inline-block;
+      width: 28px;
+      height: 6px;
+    }
+
+    .blue-swatch { background: var(--blue); }
+    .red-swatch { background: var(--red); }
+    .gold-swatch { background: var(--gold); }
+
+    .core-strip {
+      position: relative;
+      z-index: 4;
+      width: 900px;
+      margin: 0 auto 28px;
+      padding: 18px 20px 20px;
+      background: rgba(255, 250, 240, 0.92);
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      box-shadow: 0 10px 30px rgba(72, 55, 33, 0.08);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    .core-title {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 19px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .core-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .core-card {
+      min-height: 92px;
+      padding: 14px 13px 12px;
+      background: #fffdf7;
+      border: 1px solid rgba(120, 94, 57, 0.18);
+      border-top: 7px solid var(--gold);
+    }
+
+    .core-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .core-card span {
+      display: block;
+      color: #4b4640;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .main-text {
+      position: relative;
+      z-index: 4;
+      width: 820px;
+      margin: 0 auto;
+      padding: 32px 42px 38px;
+      background: rgba(255, 252, 244, 0.88);
+      border: 1px solid rgba(120, 94, 57, 0.22);
+      box-shadow: 0 18px 48px var(--shadow);
+    }
+
+    .main-text p {
+      margin: 0 0 18px;
+      font-size: 28px;
+      line-height: 1.64;
+      text-align: justify;
+    }
+
+    .main-text p:last-child { margin-bottom: 0; }
+
+    .py {
+      color: var(--blue);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 0.72em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .meaning {
+      color: var(--red);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 0.72em;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .person {
+      color: var(--ink);
+      padding: 0 2px;
+      border-bottom: 3px solid rgba(184, 121, 26, 0.55);
+      background: rgba(184, 121, 26, 0.08);
+    }
+
+    .note {
+      position: absolute;
+      z-index: 3;
+      width: 315px;
+      padding: 17px 18px 17px 20px;
+      background: var(--note);
+      border: 1px solid rgba(120, 94, 57, 0.24);
+      box-shadow: 0 8px 26px rgba(72, 55, 33, 0.08);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    .note::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 7px;
+      background: var(--gold);
+    }
+
+    .note.left::before { right: 0; }
+    .note.right::before { left: 0; }
+
+    .note.blue { background: var(--note-blue); }
+    .note.blue::before { background: var(--blue); }
+
+    .note h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .note p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.42;
+      color: #3a3936;
+    }
+
+    .note small {
+      display: block;
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    .left { left: 56px; }
+    .right { right: 56px; }
+
+    .n1 { top: 440px; }
+    .n2 { top: 640px; }
+    .n3 { top: 840px; }
+
+    .connector-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .connector {
+      fill: none;
+      stroke: rgba(184, 121, 26, 0.55);
+      stroke-width: 2.2;
+    }
+
+    .connector.blue {
+      stroke: rgba(29, 95, 191, 0.55);
+    }
+
+    .footer {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      bottom: 44px;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(120, 94, 57, 0.18);
+      color: var(--muted);
+      font-family: "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <main class="poster" id="poster">
+    <svg class="connector-layer" id="connectors" width="1600" height="1660" viewBox="0 0 1600 1660"></svg>
+
+    <header class="header">
+      <div class="line"></div>
+      <h1>[明代] 刘基 《蜀贾》 批注海报</h1>
+      <div class="line"></div>
+    </header>
+
+    <section class="subtitle">
+      <span class="legend"><span class="swatch blue-swatch"></span>蓝色：拼音</span>
+      <span class="legend"><span class="swatch red-swatch"></span>红色：字义/古今异义</span>
+      <span class="legend"><span class="swatch gold-swatch"></span>下划线：人物、地名</span>
+    </section>
+
+    <section class="core-strip">
+      <p class="core-title">先看三个卖药人的选择，再看作者怎样反讽士风</p>
+      <div class="core-grid">
+        <div class="core-card">
+          <strong>良 / 不良</strong>
+          <span>药有好坏，也暗指人的操守有高下。</span>
+        </div>
+        <div class="core-card">
+          <strong>取赢</strong>
+          <span>获利。三人取利方式不同，结局也不同。</span>
+        </div>
+        <div class="core-card">
+          <strong>趋</strong>
+          <span>众人奔向谁，显示世俗选择的方向。</span>
+        </div>
+        <div class="core-card">
+          <strong>廉 / 取</strong>
+          <span>后半段把卖药故事转到官场取利。</span>
+        </div>
+        <div class="core-card">
+          <strong>不亦怪哉</strong>
+          <span>结尾反问，批判黑白颠倒的社会评价。</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="note left blue n1" data-target="shu">
+      <h2>蜀 <span class="py">(shǔ)</span></h2>
+      <p>古地名，大致在今四川一带。</p>
+      <small>题目“蜀贾”先把故事放在商人买卖的语境中。</small>
+    </aside>
+
+    <aside class="note right n1" data-target="yulizi">
+      <h2>郁离子</h2>
+      <p>刘基在《郁离子》中常用的议论者形象。</p>
+      <small>他在故事后出场，用寓言引出对士人的批评。</small>
+    </aside>
+
+    <aside class="note left n2" data-target="chubi">
+      <h2>楚鄙三县</h2>
+      <p>楚地边境的三个县。</p>
+      <small>“卖药”转到“三县之尹”，讽刺对象进入官场。</small>
+    </aside>
+
+    <section class="main-text">
+      <p><span class="person" id="shu">蜀</span>贾<span class="py">(gǔ)</span><span class="meaning">（商人）</span>三人，皆卖药于市<span class="meaning">（市场）</span>。其一人专取良<span class="meaning">（只取好药）</span>，计入以为出<span class="meaning">（按成本定价）</span>，不虚价<span class="meaning">（不乱开价）</span>亦不过取赢<span class="meaning">（不过分获利）</span>。</p>
+
+      <p>一人良不良皆取焉，其价之贱贵<span class="meaning">（便宜或昂贵）</span>，惟买者之欲，而随以其良不良应之<span class="meaning">（按需求给好药或劣药）</span>。</p>
+
+      <p>一人不取良，惟其多卖，则贱其价<span class="meaning">（降低价格）</span>，请益则益之不较<span class="meaning">（多要就多给，不计较）</span>，于是争趋之<span class="meaning">（争着奔向他）</span>，其门之限<span class="meaning">（门槛）</span>月一易<span class="meaning">（每月换一次）</span>，岁馀而大富。</p>
+
+      <p>其兼取者趋稍缓，再期<span class="meaning">（两周年）</span>亦富。其专取良者，肆<span class="meaning">（店铺）</span>日中如宵<span class="meaning">（白天也像夜里冷清）</span>，旦食而昏不足<span class="meaning">（早饭尚有，晚饭不足）</span>。</p>
+
+      <p><span class="person" id="yulizi">郁离子</span>见而叹曰：“今之为士者亦若是夫<span class="meaning">（也像这样吧）</span>！昔<span class="person" id="chubi">楚鄙三县</span>之尹<span class="meaning">（县官）</span>三，其一廉而不获于上官<span class="meaning">（不被上级赏识）</span>，其去也无以僦舟<span class="py">(jiù)</span><span class="meaning">（雇船离开）</span>，人皆笑以为痴。</p>
+
+      <p>其一择可而取之<span class="meaning">（选择可取的利益）</span>，人不尤其取<span class="meaning">（不责怪他取利）</span>而称其能贤。其一无所不取以交于上官<span class="meaning">（无所不贪以结交上级）</span>，子吏卒<span class="meaning">（把吏卒当子弟）</span>，而宾富民<span class="meaning">（把富民当宾客）</span>，则不待三年，举而任诸纲纪之司<span class="meaning">（被举荐任法纪官职）</span>，虽百姓亦称其善，不亦怪哉！”</p>
+    </section>
+
+    <footer class="footer">
+      <span>学生自学：先读三个蜀贾的做法，再看郁离子怎样转入官场讽刺。</span>
+      <span>核心问题：为什么卖好药的人反而贫困？作者借此批评了怎样的士风？</span>
+    </footer>
+  </main>
+
+  <script>
+    function connectNotes() {
+      const poster = document.getElementById("poster");
+      const svg = document.getElementById("connectors");
+      svg.innerHTML = "";
+      const posterBox = poster.getBoundingClientRect();
+      document.querySelectorAll(".note[data-target]").forEach((note) => {
+        const target = document.getElementById(note.dataset.target);
+        if (!target) return;
+
+        const noteBox = note.getBoundingClientRect();
+        const targetBox = target.getBoundingClientRect();
+        const isLeft = note.classList.contains("left");
+        const x1 = (isLeft ? noteBox.right : noteBox.left) - posterBox.left;
+        const y1 = noteBox.top + noteBox.height / 2 - posterBox.top;
+        const x2 = targetBox.left + targetBox.width / 2 - posterBox.left;
+        const y2 = targetBox.top + targetBox.height / 2 - posterBox.top;
+        const bend = isLeft ? Math.min(x1 + 88, x2 - 32) : Math.max(x1 - 88, x2 + 32);
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", `M ${x1} ${y1} C ${bend} ${y1}, ${bend} ${y2}, ${x2} ${y2}`);
+        path.setAttribute("class", `connector ${note.classList.contains("blue") ? "blue" : "gold"}`);
+        svg.appendChild(path);
+
+        const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        dot.setAttribute("cx", x2);
+        dot.setAttribute("cy", y2);
+        dot.setAttribute("r", 4);
+        dot.setAttribute("fill", note.classList.contains("blue") ? "#1d5fbf" : "#b8791a");
+        svg.appendChild(dot);
+      });
+    }
+
+    window.addEventListener("load", connectNotes);
+    window.addEventListener("resize", connectNotes);
+  </script>
+</body>
+</html>
